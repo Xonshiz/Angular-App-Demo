@@ -1,0 +1,280 @@
+@import '~@angular/material/theming';
+@import '../app/auth/auth.component.scss';
+@import '../app/core/sidemenu/sidemenu.component.scss';
+@import '../app/core/sidemenu-item/sidemenu-item.component.scss';
+@import '../app/dashboard-widget/dashcard/dashcard.component.scss';
+@import '../app/dashboard-widget/profile-card/profile-card.component.scss';
+
+$mat-light-theme-background: (
+  status-bar: map_get($mat-grey, 300),
+  app-bar:    map_get($mat-grey, 100),
+  background: map_get($mat-indigo, 50),
+  hover:      rgba(black, 0.04), // TODO(kara): check style with Material Design UX
+  card:       white,
+  dialog:     white,
+  disabled-button: $black-12-opacity,
+  raised-button: white,
+  focused-button: $black-6-opacity,
+  selected-button: map_get($mat-grey, 300),
+  selected-disabled-button: map_get($mat-grey, 400),
+  disabled-button-toggle: map_get($mat-grey, 200),
+  unselected-chip: map_get($mat-grey, 300),
+  disabled-list-option: map_get($mat-grey, 200),
+);
+
+@include mat-core();
+//https://stackoverflow.com/questions/41440998/how-can-i-use-custom-theme-palettes-in-angular
+$custom-palette: (
+    50 : #e4e5e6,
+    100 : #bbbebf,
+    200 : #8e9395,
+    300 : #61686b,
+    400 : #1d272b,
+    500 : #3f474b,
+    600 : #1a2326,
+    700 : #151d20,
+    800 : #11171a,
+    900 : #0a0e10,
+    A100 : #55aaff,
+    A200 : #2290ff,
+    A400 : #0077ee,
+    A700 : #006ad4,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$custom-blue-nav: (
+    50 : #e1f1f6,
+    100 : #b3dde9,
+    200 : #80c6db,
+    300 : #4dafcd,
+    400 : #279ec2,
+    500 : #018db7,
+    600 : #0185b0,
+    700 : #017aa7,
+    800 : #01709f,
+    900 : #005d90,
+    A100 : #bce3ff,
+    A200 : #89ceff,
+    A400 : #56b9ff,
+    A700 : #3cafff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$custom-dark-blue-nav: (
+    50 : #e3f0f4,
+    100 : #b8d8e3,
+    200 : #89bfd1,
+    300 : #59a5bf,
+    400 : #3691b1,
+    500 : #127ea3,
+    600 : #10769b,
+    700 : #0d6b91,
+    800 : #0a6188,
+    900 : #054e77,
+    A100 : #a6dbff,
+    A200 : #73c6ff,
+    A400 : #40b1ff,
+    A700 : #26a7ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+$primary : $mat-indigo;
+$accent  : $mat-orange;
+$warn    : $mat-red;
+
+
+
+$primary-app-primary: mat-palette($custom-palette , 400);
+// mat-palette($mat-light-blue);
+// $primary-app-accent:  mat-palette($accent , 900);
+$primary-app-accent:  mat-palette($custom-blue-nav , 500);
+$primary-app-warn:    mat-palette($custom-dark-blue-nav, 500 );
+$cdk-theme:   mat-light-theme($primary-app-primary, $primary-app-accent,$primary-app-warn);
+
+cdk-sidemenu{
+    $sidemenu-app-primary: mat-palette($custom-palette , 400);
+    $sidemenu-app-accent:  mat-palette($custom-blue-nav , 900);
+    $sidemenu-app-warn:    mat-palette($warn );
+    $cdk-sidemenu-theme:   mat-dark-theme($sidemenu-app-primary, $sidemenu-app-accent,$sidemenu-app-warn);
+    @include mat-list-theme($cdk-sidemenu-theme);
+}
+
+
+cdk-sidemenu-item{
+    @include sidemenu-item($cdk-theme,20px)
+}
+
+
+cdk-dashcard {
+    $dashcard-primary: mat-palette($primary);
+    $dashcard-accent:  mat-palette($accent);
+    $dashcard-warn:    mat-palette($warn);
+    $dashcard-theme:   mat-dark-theme($dashcard-primary, $dashcard-accent,$dashcard-warn);
+    @include dashcard($dashcard-theme);
+}
+
+cdk-profile-card{
+  $dashboard-profile-primary: mat-palette($primary , 400);
+    $dashboard-profile-accent:  mat-palette($accent , 900);
+    $dashboard-profile-warn:    mat-palette($warn );
+    $cdk-dashboard-profile-theme:   mat-dark-theme($dashboard-profile-primary, $dashboard-profile-accent,$dashboard-profile-warn);
+    @include dashboard-profile($cdk-dashboard-profile-theme);
+    @include mat-tabs-theme($cdk-dashboard-profile-theme);
+}
+@include angular-material-theme($cdk-theme);
+@include auth($cdk-theme);
+
+html {
+  height:100%;
+}
+body{
+  padding: 0px !important;
+  margin: 0px !important;
+  height:100%;
+}
+.components-container-gt-xs {
+    padding: 20px;
+    // background-color: #fdfdfd;
+}
+.components-container-xs {
+    padding: 5px !important;
+    // background-color: #fdfdfd;
+}
+.component-preview {
+    padding: 20px;
+}
+.ps-content {
+  height: 100%;
+}
+
+.loader-container {
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2000;
+    position: absolute;
+
+    -moz-animation: cssAnimation 1s ease-in 3s forwards;
+    /* Firefox */
+    animation: cssAnimation 1s ease-in 3s forwards;
+    /* Safari and Chrome */
+    -o-animation: cssAnimation 1s ease-in 3s forwards;
+    /* Opera */
+    animation: cssAnimation 1s ease-in 3s forwards;
+    animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cssAnimation {
+    to {
+        opacity:0;
+        display: none;
+        visibility:hidden;
+    }
+}
+@keyframes cssAnimation {
+    to {
+        visibility:hidden;
+        opacity:0;
+        display: none;
+    }
+}
+
+
+
+.spinner {
+    margin: 50vh auto 0;
+    width: 70px;
+    text-align: center;
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+
+
+  border-radius: 100%;
+  display: inline-block;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.bounce3 {
+    background-color: orange;
+}
+
+.spinner .bounce1 {
+    background-color: blue;
+  animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+    background-color: red;
+  animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { transform: scale(0) }
+  40% { transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0);
+    transform: scale(0);
+  } 40% {
+    transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}

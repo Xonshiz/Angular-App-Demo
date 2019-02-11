@@ -1,0 +1,43 @@
+<div class="toolbar-user-container">
+		<button mat-button (click)="isOpen = !isOpen" class="toolbar-user-btn" [class.open]="isOpen" [ngStyle.xs]="{'min-width': '70px'}">
+			<span fxLayout="row" fxLayoutAlign="start center">
+				<img class="avatar" [src]="currentUser?.photoURL || 'assets/images/avatars/noavatar.png'">
+				</span>
+			</button>
+			<div class="dropdown mat-elevation-z1" [class.open]="isOpen">
+				<div class="content">
+					<div class="card" style="background:#ffffff;width: 900px">
+						<div id="ProfileUpperSection" style="background:#018DB7;text-align:center;">
+							<img [src]="currentUser?.photoURL || 'assets/images/avatars/noavatar.png'" style="max-width: 100px;max-height: 100px;margin-top: 20px;" >
+								<br>
+									<span class="name" fxHide fxShow.gt-xs>{{currentUser?.currentUserName || User}}</span>
+								
+								<!-- <p class="title">CEO & Founder, Example</p><p>Harvard University</p> -->
+								<div style="font-size:smaller">
+									<span >EmpID | </span>
+									<span>Designation</span>
+								</div>
+								<br>
+								<!-- <p><button>Contact</button></p> -->
+							</div>
+							<div id="ProfileLowerSection" style="background:#ffffff; box-shadow: none; text-shadow: none;
+							-webkit-box-shadow: none;
+								-moz-box-shadow: none;">
+								<table style="width:100%; margin-bottom: 10px; -webkit-box-shadow: none;
+								-moz-box-shadow: none;
+								box-shadow: none;">
+									<tr>
+										<td style="color:#000000; font-size: x-small; font-weight: bold">Link</td>
+										<td style="color:#000000 ; font-size: x-small; font-weight: bold">Link</td>
+										<td style="color:#000000 ; font-size: x-small; font-weight: bold">Link</td>
+									</tr>
+								</table>
+								<button mat-stroked-button style="float: left;background: white; border-color: #c3c6cc; color: gray; opacity: 0.5;">Profile</button>
+								<button mat-stroked-button style="float: right;background: white;border-color: #c3c6cc; color: gray; opacity: 0.5;" (click)="authService.logout()">Sign Out</button>
+							</div>
+						</div>
+						<!-- <div id="ProfileUpperSection" style="background:#018DB7;text-align:center"><div><img class="avatar" width="50px" height="50px" [src]="currentUser?.photoURL || 'assets/images/avatars/noavatar.png'"></div><div><span class="name" fxHide fxShow.gt-xs>{{currentUser?.currentUserName || Dhruv}}</span></div><div><table style="width:100%"><tr><th class="name" fxHide fxShow.gt-xs>{{currentUser?.currentUserName || Dhruv}}</th></tr><th class="name" fxHide fxShow.gt-xs>{{currentUser?.currentUserName || Dhruv}}</th><tr><td>3121</td><td>Software Developer</td></tr></table></div></div> -->
+						<!-- <mat-nav-list><mat-list-item><a matLine >Profile</a><button mat-icon-button><mat-icon>account_circle</mat-icon></button></mat-list-item><mat-list-item><a matLine >Settings</a><button mat-icon-button><mat-icon>settings</mat-icon></button></mat-list-item><mat-list-item><a matLine >Help</a><button mat-icon-button><mat-icon>help</mat-icon></button></mat-list-item><mat-divider></mat-divider><mat-list-item><a matLine >Logout</a><button mat-icon-button><mat-icon>exit_to_app</mat-icon></button></mat-list-item></mat-nav-list> -->
+					</div>
+				</div>
+			</div>

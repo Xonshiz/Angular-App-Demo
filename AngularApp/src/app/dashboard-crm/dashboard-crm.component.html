@@ -1,0 +1,31 @@
+<div style= "margin-left: 20px">
+    <div class="DashboardHead">
+        <p style="font-size: x-large; color:#777777; font-family: Open Sans; 
+        font-weight: bold; ">DASHBOARD</p>
+        <div style="font-size:small; color:#777777; margin-left:10px; font-family: Open Sans; 
+         ">Home/Dashboard</div>
+    </div>
+     <div fxLayout="row" fxLayout="row wrap">
+        <div *ngFor="let dash of dashCard" fxFlex.lt-sm="100" fxFlex.sm="50" fxFlex.md="25" >
+            <cdk-dashcard [dashData]="dash"></cdk-dashcard>
+        </div>
+    </div>
+    <div fxLayout="row" fxLayout="row wrap">
+        <cdk-bar-graph fxFlex="37.5" fxFlex.lt-sm="100" fxFlex.sm="50"></cdk-bar-graph>
+        <cdk-doughnut-graph fxFlex="37.5" fxFlex.lt-sm="100" fxFlex.sm="50"></cdk-doughnut-graph>
+        <!-- <cdk-weather fxFlex="25" fxFlex.lt-sm="100" fxFlex.sm="100"></cdk-weather> -->
+    </div>
+    
+       <!-- Footer -->
+       <footer class="footer">
+       
+        <div>
+        <!-- Copyright -->
+        
+        <div class="footer-copyright text-center py-3" style="margin-top:1%; margin-bottom:1%; color: black">Copyright © 2018-2019 
+          <a href="#" style="color:#2096BC" > TEKSystems.</a> All rights reserved.
+        </div>
+        <!-- Copyright -->
+    </div>
+      </footer>
+</div>

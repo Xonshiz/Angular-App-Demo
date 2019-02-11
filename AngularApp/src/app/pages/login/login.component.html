@@ -1,0 +1,80 @@
+<div fxLayout="column" fxFlexFill fxLayoutAlign="center center" style="background-image:url('../../../assets/login_bg.jpg');
+height: 100%;
+background-repeat:no-repeat;
+background-position: center;
+background-size: cover;">
+
+<header class="header">
+    
+        <!-- Copyright -->
+        <div class="TGSlogo" >
+
+         <img src="../../../assets/teksystems_logo.png" height="6%" width="10%"  />
+        </div>
+        <!-- Copyright -->
+      
+</header>
+ 
+
+ <div fxLayout="column" style="height:auto; width:25%;">
+   
+        <div class=" mat-elevation-z4">
+            <mat-card >
+                <mat-card-title style="font-weight:bold">Beetle
+                    <!-- <a class="redirect" [routerLink]="['/sigup']">Register an account</a> -->
+                </mat-card-title>
+                <mat-card-content>
+                    <div style="text-align:center">
+                       
+                        <h4>Sign in to start your session</h4>
+                    </div>
+                    <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="userForm" #f="ngForm" (ngSubmit)="signIn(f.value)">
+                        <mat-form-field class="full-width">
+                          <input type="email" id="email" class="input" placeholder="Please enter your email"
+                                 formControlName="user_name" required matInput>
+                        </mat-form-field>
+                        <div *ngIf="formErrors.email" class="help is-danger">
+                            {{ formErrors.email }}
+                        </div>
+                        <mat-form-field class="full-width">
+                            <input type="password" id="password" class="input" placeholder="Please  enter your password"
+                            formControlName="user_password" required matInput >
+                        </mat-form-field>
+                        <div *ngIf="formErrors.password" class="help is-danger">
+                            {{ formErrors.password }}
+                        </div>
+                        <div *ngIf="invalidLogin" class="help is-danger" style="color: #B20000 ; align-self: center">
+                            {{ formErrors.login_error }}
+                        </div>
+                        <br>
+                        <div>
+                                <button mat-raised-button color="accent" type="submit" [disabled]="!userForm.valid" style="float:right">LOGIN</button>
+                          
+                        </div>
+                        <br>
+                             <div>
+                                    <a style="float:left" (click)="forgotpassword()">forgot password?</a>
+                           
+                             </div>
+                             <app-popup *ngIf="IsforgotPassword"></app-popup>
+                        </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        
+    </div>
+    
+  
+       <!-- Footer -->
+   <footer class="footer">
+       
+    <div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">Copyright © 2018-2019 
+      <a href="#" style="color:#2096BC" > TEKSystems.</a> All rights reserved.
+    </div>
+    <!-- Copyright -->
+</div>
+  </footer>
+   
+</div>

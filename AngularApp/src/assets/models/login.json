@@ -1,0 +1,45 @@
+{
+    "error_code": "1",
+    "db_error_code": "null",
+    "message": "null",
+    "result": {
+        "u_session_token": "e3edcbfab567bbc",
+        "u_name": "dKanojia",
+        "u_status": "1",
+        "u_emplyee_id": "0000",
+        "u_role": "456",
+        "u_tek_email": "dkanojia@teksystems.com",
+        "u_access": [
+            {
+                "m_id": "32",
+                "m_position": "1",
+                "m_name": "Employee Management",
+                "access_by": "456"
+            },
+            {
+                "m_id": "98",
+                "m_position": "2",
+                "m_name": "Project Management",
+                "access_by": "123,342,543,624,456"
+            },
+            {
+                "m_id": "23",
+                "m_position": "3",
+                "m_name": "Practice Management",
+                "access_by": "456"
+            },
+            {
+                "m_id": "64",
+                "m_position": "4",
+                "m_name": "Reports",
+                "access_by": "456"
+            },
+            {
+                "m_id": "87",
+                "m_position": "5",
+                "m_name": "Timesheet",
+                "access_by": "456,222,123,234,345,567,789,987,321,452,634,745"
+            }
+        ]
+    }
+}
