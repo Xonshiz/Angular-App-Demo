@@ -1,0 +1,5 @@
+
+AngularApp/node_modules/.bin/_ts-node.cmd
+AngularApp/node_modules/*
+*.cmd
+AngularApp/node_modules/.bin/*
