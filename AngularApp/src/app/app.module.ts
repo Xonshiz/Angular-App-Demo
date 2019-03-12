@@ -17,7 +17,7 @@ import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
 
 @NgModule({
   declarations: [
-    AppComponent   
+    AppComponent, 
     // HeaderComponent,
     // FooterComponent
     
