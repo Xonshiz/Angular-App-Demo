@@ -21,7 +21,7 @@ export class MenuMaker {
                     'sub': [
                         {
                             'name': 'Import Employee',
-                            'link': false,
+                            'link': './pages/importemployee',
                             'icon': 'open_in_browser',
                             'chip': false,
                             'open': false,
@@ -36,7 +36,7 @@ export class MenuMaker {
                         {
             
                             'name': 'Add Employee',
-                            'link': 'material-widgets/stepper',
+                            'link': './pages/addemployee',
                             'icon': 'open_with',
                             'chip': false,
                             'open': false,
@@ -44,14 +44,14 @@ export class MenuMaker {
                         },
                         {
                             'name': 'Upload CV',
-                            'link': 'material-widgets/expansion',
+                            'link': './pages/uploadcv',
                             'icon': 'input',
                             'chip': false,
                             'open': false,
                         },
                         {
                             'name': 'Upload DL',
-                            'link': 'material-widgets/spinner',
+                            'link': './pages/uploaddl',
                             'icon': 'swap_vert',
                             'chip': false,
                             'open': false,
@@ -73,25 +73,25 @@ export class MenuMaker {
                         {
                             'name': 'Search Project',
                             'icon': 'search',
-                            'link': 'tables/fixed',
+                            'link': './pages/searchproject',
                             'open': false,
                         },
                         {
                             'name': 'Add Project',
                             'icon': 'input',
-                            'link': 'tables/featured',
+                            'link': '.pages/addproject',
                             'open': false,
                         },
                         {
                             'name': 'Upload SOW',
                             'icon': 'open_in_browser',
-                            'link': 'tables/responsive',
+                            'link': '.pages/uploadsow',
                             'open': false,
                         },
                         {
                             'name': 'Add Client',
                             'icon': 'menu',
-                            'link': 'tables/featured',
+                            'link': '.pages/addclient',
                             'open': false,
                         }
                     ]
