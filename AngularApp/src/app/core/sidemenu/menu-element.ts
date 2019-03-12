@@ -21,14 +21,14 @@ export class MenuMaker {
                     'sub': [
                         {
                             'name': 'Import Employee',
-                            'link': '../login',
+                            'link': false,
                             'icon': 'open_in_browser',
                             'chip': false,
                             'open': false,
                         },
                         {
                             'name': 'Search Employee',
-                            'link': 'material-widgets/list',
+                            'link': './pages/searchemployee',
                             'icon': 'search',
                             'chip': false,
                             'open': false,

@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
 
+
 // import { HeaderComponent } from "./Common/Header/Header.component";
 // import { FooterComponent } from "./Common/Footer/Footer.component";
 
