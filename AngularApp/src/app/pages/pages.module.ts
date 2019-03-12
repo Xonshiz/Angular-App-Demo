@@ -15,6 +15,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PagesRouterModule } from './pages.routes';
 import { ServicesComponent } from './services/services.component';
 import { CoreModule } from '../core/core.module';
+import { SearchemployeeComponent } from './searchemployee/searchemployee.component';
 
 @NgModule({
     imports: [
@@ -32,7 +33,7 @@ import { CoreModule } from '../core/core.module';
         CoreModule,
         PagesRouterModule ],
     declarations: [   
-        ServicesComponent,
+        ServicesComponent, SearchemployeeComponent,
     ],
     exports: [
     ],
