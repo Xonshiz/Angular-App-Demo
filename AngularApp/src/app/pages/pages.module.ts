@@ -15,15 +15,16 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { PagesRouterModule } from './pages.routes';
 import { ServicesComponent } from './services/services.component';
 import { CoreModule } from '../core/core.module';
-import { SearchemployeeComponent } from './searchemployee/searchemployee.component';
-import { AddemployeeComponent } from './addemployee/addemployee.component';
-import { ImportemployeeComponent } from './importemployee/importemployee.component';
-import { UploadcvComponent } from './uploadcv/uploadcv.component';
-import { UploaddlComponent } from './uploaddl/uploaddl.component';
-import { AddprojectComponent } from './addproject/addproject.component';
-import { UploadsowComponent } from './uploadsow/uploadsow.component';
-import { AddclientComponent } from './addclient/addclient.component';
-import { SearchprojectComponent } from './searchproject/searchproject.component';
+import {SearchemployeeComponent } from './EmployeeManagement/searchemployee/searchemployee.component';
+import { AddemployeeComponent } from './EmployeeManagement/addemployee/addemployee.component';
+import { ImportemployeeComponent } from './EmployeeManagement/importemployee/importemployee.component';
+import { UploadcvComponent } from './EmployeeManagement/uploadcv/uploadcv.component';
+import { UploaddlComponent } from './EmployeeManagement/uploaddl/uploaddl.component';
+import { AddprojectComponent } from './ProjectManagement/addproject/addproject.component';
+import { UploadsowComponent } from './ProjectManagement/uploadsow/uploadsow.component';
+import { AddclientComponent } from './ProjectManagement/addclient/addclient.component';
+import { SearchprojectComponent } from './ProjectManagement/searchproject/searchproject.component';
+import { from } from 'rxjs';
 
 @NgModule({
     imports: [
