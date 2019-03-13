@@ -1,3 +1,425 @@
-<p>
-  addemployee works!
-</p>
+<div class="DashboardHead">
+  <p style="font-size: x-large; color:#777777; font-family: Open Sans; 
+  font-weight: bold; ">EMPLOYEE MANAGEMENT</p>
+  <div style="font-size:small; color:#777777; font-family: Open Sans; 
+   ">Home > Employee Management > Add Employee</div>
+</div>
+<mat-card class="card">
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Personal Information</ng-template>
+        <table cellspacing="30">
+            <tr>
+              <td>
+                  <input  matInput placeholder="PS Employee ID" formControlName="firstCtrl" required>
+              </td>
+              <td>
+                  <input  matInput placeholder="TGS Employee ID" formControlName="firstCtrl" required>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                    <input  matInput placeholder="First Name" formControlName="firstCtrl" required>
+                </td>
+                <td>
+                    <input  matInput placeholder="Last Name" formControlName="firstCtrl" required>
+                </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="text-align:right">
+                  <button mat-button matStepperNext style="background:#00A85B;-webkit-text-fill-color: #fff">Next</button>
+              </td>
+            </tr>
+          </table>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Contact Information</ng-template>
+        <table cellspacing="30">
+            <tr>
+              <td>
+                  <input  matInput placeholder="TEK Email Address" formControlName="secondCtrl" required>
+              </td>
+              <td>
+                  <input  matInput placeholder="Alternate Email Address" formControlName="secondCtrl" required>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                    <input  matInput placeholder="Office Phone" formControlName="secondCtrl" required>
+                </td>
+                <td>
+                    <input  matInput placeholder="Mobile Office" formControlName="secondCtrl" required>
+                </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td style="text-align:right">
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext style="background:#00A85B;-webkit-text-fill-color: #fff">Next</button>
+              </td>
+            </tr>
+          </table>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+        <ng-template matStepLabel>Professional Information</ng-template>
+        <table cellspacing="30">
+            <tr>
+              <td>
+                  <mat-select placeholder="Title" aria-hidden="false">
+                      <mat-option *ngFor="let title of titles" [value]="title.value">
+                        {{title.viewValue}}
+                      </mat-option>
+                  </mat-select>
+              </td>
+              <td>
+                  <mat-select placeholder="Business Line" aria-hidden="false">
+                      <mat-option *ngFor="let businessLine of businessLines" [value]="businessLine.value">
+                        {{businessLine.viewValue}}
+                      </mat-option>
+                  </mat-select>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-select placeholder="Location" aria-hidden="false">
+                        <mat-option *ngFor="let location of locations" [value]="location.value">
+                          {{location.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </td>
+                <td>
+                    <mat-select placeholder="Reporting To" aria-hidden="false">
+                        <mat-option *ngFor="let reporting of reportingTo" [value]="reporting.value">
+                          {{reporting.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <mat-select placeholder="Center Of Excellence" aria-hidden="false">
+                        <mat-option *ngFor="let centerOfExcellence of centerOfExcellences" [value]="centerOfExcellence.value">
+                          {{centerOfExcellence.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </td>
+                <td>
+                    <input  matInput placeholder="Salary (INR)" formControlName="thirdCtrl" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input  matInput placeholder="DL" formControlName="thirdCtrl" required>
+                </td>
+                <td>
+                  <label>
+                    <b>
+                        Voluntary
+                    </b>
+                  </label>
+                  <br>
+                  <br>
+                  <mat-radio-group>
+                      <mat-radio-button value="1">Yes</mat-radio-button>
+                      <span style="display:inline-block; width: 20px;"></span>
+                      <mat-radio-button value="2">No</mat-radio-button>
+                  </mat-radio-group>                      
+                </td>
+            </tr>
+            <tr>
+              <td>
+                  <input matInput [matDatepicker]="hiringDate" placeholder="Hiring Date">
+                  <mat-datepicker-toggle matSuffix [for]="hiringDate"></mat-datepicker-toggle>
+                  <mat-datepicker #hiringDate startView="year" [startAt]="startDate"></mat-datepicker>
+              </td>
+              <td style="text-align:right">
+                  <input matInput [matDatepicker]="effectiveDate" placeholder="Effective Date">
+                  <mat-datepicker-toggle matSuffix [for]="effectiveDate"></mat-datepicker-toggle>
+                  <mat-datepicker #effectiveDate startView="year" [startAt]="startDate"></mat-datepicker>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                    <input matInput [matDatepicker]="terminationDate" placeholder="Termination Date">
+                    <mat-datepicker-toggle matSuffix [for]="terminationDate"></mat-datepicker-toggle>
+                    <mat-datepicker #terminationDate startView="year" [startAt]="startDate"></mat-datepicker>
+                </td>
+                <td style="text-align:right">
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button matStepperNext style="background:#00A85B;-webkit-text-fill-color: #fff">Next</button>
+                </td>
+              </tr>
+          </table>
+      </form>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Review</ng-template>
+      <label>
+        <b>
+          1.) Personal Information
+        </b>
+      </label>
+      <br>
+      <table cellspacing="30">
+          <tr>
+            <td>
+              <label>
+                <i>
+                    * PS Employee ID
+                </i>
+              </label>
+              <br>
+                <input  matInput placeholder="PS Employee ID" required>
+            </td>
+            <td>
+                <label>
+                    <i>
+                        * TGS Employee ID
+                    </i>
+                  </label>
+                  <br>
+                <input  matInput placeholder="TGS Employee ID" required>
+            </td>
+          </tr>
+          <tr>
+              <td>
+                  <label>
+                      <i>
+                          * First Name
+                      </i>
+                    </label>
+                    <br>
+                  <input  matInput placeholder="First Name" required>
+              </td>
+              <td>
+                  <label>
+                      <i>
+                          * Last Name
+                      </i>
+                    </label>
+                    <br>
+                  <input  matInput placeholder="Last Name" required>
+              </td>
+          </tr>
+      </table>
+
+      <label>
+        <b>
+          2.) Contact Information
+        </b>
+      </label>
+      <br>
+      <table cellspacing="30">
+        <tr>
+          <td>
+              <label>
+                  <i>
+                      * TEK Email Address
+                  </i>
+                </label>
+                <br>
+              <input  matInput placeholder="TEK Email Address" required>
+          </td>
+          <td>
+              <label>
+                  <i>
+                      * Alternate Email Address
+                  </i>
+                </label>
+                <br>
+              <input  matInput placeholder="Alternate Email Address" required>
+          </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    <i>
+                        * Office Phone
+                    </i>
+                  </label>
+                  <br>
+                <input  matInput placeholder="Office Phone" required>
+            </td>
+            <td>
+                <label>
+                    <i>
+                        * Mobile Office
+                    </i>
+                  </label>
+                  <br>
+                <input  matInput placeholder="Mobile Office" required>
+            </td>
+        </tr>
+      </table>
+
+      <label>
+          <b>
+            3.) Professional Information
+          </b>
+        </label>
+        <br>
+        <table cellspacing="30">
+            <tr>
+              <td>
+                <label>
+                  <i>
+                    Title
+                  </i>
+                </label>
+                <br>
+                  <mat-select placeholder="Title" aria-hidden="false">
+                      <mat-option *ngFor="let title of titles" [value]="title.value">
+                        {{title.viewValue}}
+                      </mat-option>
+                  </mat-select>
+              </td>
+              <td>
+                  <label>
+                      <i>
+                        Business Line
+                      </i>
+                    </label>
+                    <br>
+                  <mat-select placeholder="Business Line" aria-hidden="false">
+                      <mat-option *ngFor="let businessLine of businessLines" [value]="businessLine.value">
+                        {{businessLine.viewValue}}
+                      </mat-option>
+                  </mat-select>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <i>
+                          Location
+                        </i>
+                      </label>
+                      <br>
+                    <mat-select placeholder="Location" aria-hidden="false">
+                        <mat-option *ngFor="let location of locations" [value]="location.value">
+                          {{location.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </td>
+                <td>
+                    <label>
+                        <i>
+                          Reporting To
+                        </i>
+                      </label>
+                      <br>
+                    <mat-select placeholder="Reporting To" aria-hidden="false">
+                        <mat-option *ngFor="let reporting of reportingTo" [value]="reporting.value">
+                          {{reporting.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <i>
+                          Center Of Excellence
+                        </i>
+                      </label>
+                      <br>
+                    <mat-select placeholder="Center Of Excellence" aria-hidden="false">
+                        <mat-option *ngFor="let centerOfExcellence of centerOfExcellences" [value]="centerOfExcellence.value">
+                          {{centerOfExcellence.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </td>
+                <td>
+                    <label>
+                        <i>
+                          Salary (INR)
+                        </i>
+                      </label>
+                      <br>
+                    <input  matInput placeholder="Salary (INR)" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <i>
+                          DL
+                        </i>
+                      </label>
+                      <br>
+                    <input  matInput placeholder="DL" required>
+                </td>
+                <td>
+                  <label>
+                    <b>
+                        Voluntary
+                    </b>
+                  </label>
+                  <br>
+                  <br>
+                  <mat-radio-group>
+                      <mat-radio-button value="1">Yes</mat-radio-button>
+                      <span style="display:inline-block; width: 20px;"></span>
+                      <mat-radio-button value="2">No</mat-radio-button>
+                  </mat-radio-group>                      
+                </td>
+            </tr>
+            <tr>
+              <td>
+                  <label>
+                      <i>
+                        Hiring Date
+                      </i>
+                    </label>
+                    <br>
+                  <input matInput [matDatepicker]="hiringDate_review" placeholder="Hiring Date">
+                  <mat-datepicker-toggle matSuffix [for]="hiringDate_review"></mat-datepicker-toggle>
+                  <mat-datepicker #hiringDate_review startView="year" [startAt]="startDate"></mat-datepicker>
+              </td>
+              <td>
+                  <label >
+                      <i>
+                        Effective Date
+                      </i>
+                    </label>
+                    <br>
+                  <input matInput [matDatepicker]="effectiveDate_review" placeholder="Effective Date">
+                  <mat-datepicker-toggle matSuffix [for]="effectiveDate_review"></mat-datepicker-toggle>
+                  <mat-datepicker #effectiveDate_review startView="year" [startAt]="startDate"></mat-datepicker>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <i>
+                          Termination Date
+                        </i>
+                      </label>
+                      <br>
+                    <input matInput [matDatepicker]="terminationDate_review" placeholder="Termination Date">
+                    <mat-datepicker-toggle matSuffix [for]="terminationDate_review"></mat-datepicker-toggle>
+                    <mat-datepicker #terminationDate_review startView="year" [startAt]="startDate"></mat-datepicker>
+                </td>
+                <td style="text-align:right">
+                    <button mat-button (click)="stepper.reset()">Reset</button>
+                    <button mat-button matStepperNext style="background:#00A85B;-webkit-text-fill-color: #fff">Submit</button>
+                </td>
+              </tr>
+          </table>
+    </mat-step>
+    <!-- <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div> -->
+  </mat-horizontal-stepper>
+</mat-card>
