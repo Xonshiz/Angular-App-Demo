@@ -79,19 +79,19 @@ export class MenuMaker {
                         {
                             'name': 'Add Project',
                             'icon': 'input',
-                            'link': '.pages/addproject',
+                            'link': './pages/addproject',
                             'open': false,
                         },
                         {
                             'name': 'Upload SOW',
                             'icon': 'open_in_browser',
-                            'link': '.pages/uploadsow',
+                            'link': './pages/uploadsow',
                             'open': false,
                         },
                         {
                             'name': 'Add Client',
                             'icon': 'menu',
-                            'link': '.pages/addclient',
+                            'link': './pages/addclient',
                             'open': false,
                         }
                     ]
@@ -109,12 +109,12 @@ export class MenuMaker {
                             'name': 'Add Practice Updates',
                             'icon': 'account_balance',
                             'open': false,
-                            'link': '../login',
+                            'link': false,
                         }, {
                             'name': 'Practice Expenses',
                             'icon': 'description',
                             'open': false,
-                            'link': 'pages/services',
+                            'link': false,
                         }
                     ]
                    });
@@ -131,7 +131,7 @@ export class MenuMaker {
                             'name': 'Practice',
                             'icon': 'exit_to_app',
                             'open': false,
-                            'link': '../login',
+                            'link': false,
                         }, {
                             'name': 'Project',
                             'icon': 'find_replace',

@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+  background: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.search {
+  width: 100%;
+  position: relative
+}
+
+.searchTerm {
+  float: right;
+  width: 100%;
+  border: 1px solid #b9b7b7;
+  padding: 5px;
+  height: 25px;
+  border-radius: 1px;
+  outline: none;
+  color: rgb(169, 169, 170);
+
+  
+}
+
+.searchTerm:focus{
+  color: gray;
+}
+
+.searchButton {
+  position: absolute;  
+  right: 0px;
+  width: 90px;
+  height: 36px;
+  border: 1px solid #2096BC;
+  background: #2096BCCC;
+  text-align: center;
+  color: #fff;
+  border-radius: 1px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: Open Sans;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+
+.card1{
+    width: 92%;
+    margin: 2%;
+    
+}
+.card2{
+    width: 95%;
+    margin: 2%;
+}
+.DashboardHead{
+    font-size: large;
+    margin-left : 20px;
+  }
+  
+.heading{
+    margin-bottom: 10%;
+    margin-left: 2%;
+
+}
+table {
+    width: 100%;
+  }
+
+  
