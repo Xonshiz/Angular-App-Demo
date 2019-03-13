@@ -30,6 +30,10 @@ import { UploadsowComponent } from './ProjectManagement/uploadsow/uploadsow.comp
 import { AddclientComponent } from './ProjectManagement/addclient/addclient.component';
 import { SearchprojectComponent } from './ProjectManagement/searchproject/searchproject.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { from } from 'rxjs';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 @NgModule({
     imports: [
@@ -52,12 +56,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         MatRadioModule,
         MatNativeDateModule,
         ReactiveFormsModule,
-        PagesRouterModule ],
+        PagesRouterModule,
+        MatListModule,
+        MatChipsModule,
+        CoreModule,
+        PagesRouterModule,
+        MatTableModule,
+        MatPaginatorModule
+
+
+    ],
     declarations: [   
         ServicesComponent, SearchemployeeComponent,
          AddemployeeComponent, ImportemployeeComponent,
           UploadcvComponent, UploaddlComponent, SearchprojectComponent, 
-          AddprojectComponent, AddclientComponent, UploadsowComponent,
+          AddprojectComponent, AddclientComponent, UploadsowComponent, 
+           UploadsowComponent, AddclientComponent
     ],
     exports: [
     ],
