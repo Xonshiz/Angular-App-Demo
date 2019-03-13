@@ -6,8 +6,13 @@ import {
         MatInputModule,
         MatToolbarModule,
         MatIconModule,
+        MatStepperModule,
         MatCheckboxModule,
         MatListModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        MatRadioModule,
        } from '@angular/material';
 import { MatChipsModule } from '@angular/material/chips';
 import { CommonModule } from '@angular/common';
@@ -24,7 +29,7 @@ import { AddprojectComponent } from './ProjectManagement/addproject/addproject.c
 import { UploadsowComponent } from './ProjectManagement/uploadsow/uploadsow.component';
 import { AddclientComponent } from './ProjectManagement/addclient/addclient.component';
 import { SearchprojectComponent } from './ProjectManagement/searchproject/searchproject.component';
-import { from } from 'rxjs';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     imports: [
@@ -40,6 +45,13 @@ import { from } from 'rxjs';
         MatListModule,
         MatChipsModule,
         CoreModule,
+        MatStepperModule,
+        FormsModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatRadioModule,
+        MatNativeDateModule,
+        ReactiveFormsModule,
         PagesRouterModule ],
     declarations: [   
         ServicesComponent, SearchemployeeComponent,

@@ -1,3 +1,195 @@
-<p>
-  addproject works!
-</p>
+<div class="DashboardHead">
+    <p style="font-size: x-large; color:#777777; font-family: Open Sans; 
+    font-weight: bold; ">PROJECT MANAGEMENT</p>
+    <div style="font-size:small; color:#777777; font-family: Open Sans; 
+     ">Home > Project Management > Add Project</div>
+  </div>
+<mat-card class="card">
+  <label>
+      <b>
+        1.) Project Idenctification
+      </b>
+    </label>
+    <br>
+    <table cellspacing="30">
+        <tr>
+          <td>
+            <label>
+              <i>
+                  * Project ID
+              </i>
+            </label>
+            <br>
+              <input  matInput placeholder="Project ID" required>
+          </td>
+          <td>
+              <label>
+                  <i>
+                      * Company Project ID
+                  </i>
+                </label>
+                <br>
+              <input  matInput placeholder="Company Project ID" required>
+          </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    <i>
+                        * Project Name
+                    </i>
+                  </label>
+                  <br>
+                <input  matInput placeholder="Project Name" required>
+            </td>
+        </tr>
+    </table>
+    
+    <label>
+      <b>
+        2.) Project Details
+      </b>
+    </label>
+    <br>
+    <table cellspacing="30">
+      <tr>
+        <td>
+            <label>
+                <i>
+                    * BDM
+                </i>
+              </label>
+              <br>
+            <input  matInput placeholder="BDM" required>
+        </td>
+        <td>
+            <label>
+                <i>
+                    * Project Analyst
+                </i>
+              </label>
+              <br>
+            <input  matInput placeholder="Project Analyst" required>
+        </td>
+      </tr>
+      <tr>
+          <td>
+              <label>
+                  <i>
+                      * Start Date
+                  </i>
+                </label>
+                <br>
+                <input matInput [matDatepicker]="startDate" placeholder="Hiring Date">
+                <mat-datepicker-toggle matSuffix [for]="startDate"></mat-datepicker-toggle>
+                <mat-datepicker #startDate startView="year" [startAt]="startDate"></mat-datepicker>
+          </td>
+          <td>
+              <label>
+                  <i>
+                      * End Date
+                  </i>
+                </label>
+                <br>
+                <input matInput [matDatepicker]="endDate" placeholder="Hiring Date">
+                <mat-datepicker-toggle matSuffix [for]="endDate"></mat-datepicker-toggle>
+                <mat-datepicker #endDate startView="year" [startAt]="startDate"></mat-datepicker>
+          </td>
+      </tr>
+    </table>
+    
+    <label>
+        <b>
+          3.) Client Information
+        </b>
+      </label>
+      <br>
+      <table cellspacing="30">
+          <tr>
+            <td>
+              <label>
+                <i>
+                  Client
+                </i>
+              </label>
+              <br>
+                <mat-select placeholder="Client" aria-hidden="false">
+                    <mat-option *ngFor="let client of clients" [value]="client.value">
+                      {{client.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </td>
+            <td>
+                <label>
+                    <i>
+                      Region
+                    </i>
+                  </label>
+                  <br>
+                <mat-select placeholder="Region" aria-hidden="false">
+                    <mat-option *ngFor="let region of regions" [value]="region.value">
+                      {{region.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </td>
+          </tr>
+          <tr>
+              <td>
+                  <label>
+                      <i>
+                        Solution Executive
+                      </i>
+                    </label>
+                    <br>
+                  <mat-select placeholder="Solution Executive" aria-hidden="false">
+                      <mat-option *ngFor="let solutionExecutive of solutionExecutives" [value]="solutionExecutive.value">
+                        {{solutionExecutive.viewValue}}
+                      </mat-option>
+                  </mat-select>
+              </td>
+              <td>
+                  <label>
+                      <i>
+                        Project Payment Mode
+                      </i>
+                    </label>
+                    <br>
+                    <br>
+                    <mat-radio-group>
+                        <mat-radio-button value="1">T&M</mat-radio-button>
+                        <span style="display:inline-block; width: 20px;"></span>
+                        <mat-radio-button value="2">Fixed Rate</mat-radio-button>
+                    </mat-radio-group>   
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <label>
+                      <i>
+                        Contact
+                      </i>
+                    </label>
+                    <br>
+                    <input  matInput placeholder="012" style="width:50px" required>
+                    <span style="display:inline-block; width: 20px;"></span>
+                    <input  matInput placeholder="9283746578" required>
+              </td>
+              <td>
+                  <label>
+                      <i>
+                        Email ID
+                      </i>
+                    </label>
+                    <br>
+                  <input  matInput placeholder="Email ID" required>
+              </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td style="text-align:right">
+                <button mat-button>Reset</button>
+                <button mat-button style="background:#00A85B;-webkit-text-fill-color: #fff">Submit</button>
+            </td>
+            </tr>
+        </table>
+</mat-card>

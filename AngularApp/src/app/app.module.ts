@@ -8,7 +8,14 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './services/auth.service';
 import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
-
+import { MatInputModule,
+        MatSelectModule, 
+        MatButtonModule,
+        MatStepperModule, 
+        MatAutocompleteModule, 
+        MatFormFieldModule, 
+        MatRippleModule } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // import { HeaderComponent } from "./Common/Header/Header.component";
 // import { FooterComponent } from "./Common/Footer/Footer.component";
@@ -28,7 +35,22 @@ import { HttpModule, Http, BaseRequestOptions } from '@angular/http';
     HttpModule,
     LazyLoadModule,
     CoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatStepperModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatAutocompleteModule,
+    MatSelectModule,
+    MatStepperModule
+  ],
+  exports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatStepperModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
