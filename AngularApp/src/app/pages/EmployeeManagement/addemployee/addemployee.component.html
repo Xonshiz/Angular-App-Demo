@@ -273,7 +273,7 @@
               <td>
                 <label>
                   <i>
-                    Title
+                    * Title
                   </i>
                 </label>
                 <br>
@@ -286,7 +286,7 @@
               <td>
                   <label>
                       <i>
-                        Business Line
+                        * Business Line
                       </i>
                     </label>
                     <br>
@@ -301,7 +301,7 @@
                 <td>
                     <label>
                         <i>
-                          Location
+                          * Location
                         </i>
                       </label>
                       <br>
@@ -314,7 +314,7 @@
                 <td>
                     <label>
                         <i>
-                          Reporting To
+                          * Reporting To
                         </i>
                       </label>
                       <br>
@@ -329,7 +329,7 @@
                 <td>
                     <label>
                         <i>
-                          Center Of Excellence
+                          * Center Of Excellence
                         </i>
                       </label>
                       <br>
@@ -342,7 +342,7 @@
                 <td>
                     <label>
                         <i>
-                          Salary (INR)
+                          * Salary (INR)
                         </i>
                       </label>
                       <br>
@@ -353,7 +353,7 @@
                 <td>
                     <label>
                         <i>
-                          DL
+                          * DL
                         </i>
                       </label>
                       <br>
@@ -362,7 +362,7 @@
                 <td>
                   <label>
                     <b>
-                        Voluntary
+                      * Voluntary
                     </b>
                   </label>
                   <br>
@@ -378,7 +378,7 @@
               <td>
                   <label>
                       <i>
-                        Hiring Date
+                        * Hiring Date
                       </i>
                     </label>
                     <br>
@@ -389,20 +389,22 @@
               <td>
                   <label >
                       <i>
-                        Effective Date
+                        * Effective Date
                       </i>
                     </label>
                     <br>
-                  <input matInput [matDatepicker]="effectiveDate_review" placeholder="Effective Date">
-                  <mat-datepicker-toggle matSuffix [for]="effectiveDate_review"></mat-datepicker-toggle>
-                  <mat-datepicker #effectiveDate_review startView="year" [startAt]="startDate"></mat-datepicker>
+                  <div class="dateSelector">
+                    <input matInput [matDatepicker]="effectiveDate_review" placeholder="Effective Date">
+                    <mat-datepicker-toggle matSuffix [for]="effectiveDate_review"></mat-datepicker-toggle>
+                    <mat-datepicker #effectiveDate_review startView="year" [startAt]="startDate"></mat-datepicker>
+                  </div>
               </td>
             </tr>
             <tr>
                 <td>
                     <label>
                         <i>
-                          Termination Date
+                          * Termination Date
                         </i>
                       </label>
                       <br>

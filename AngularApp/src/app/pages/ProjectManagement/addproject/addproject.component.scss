@@ -14,7 +14,7 @@
     border: 1px solid #7E7474 !important;
     height: 30px;
     width: 300px;
-    padding: 0%;
+    padding: 2%;
     margin: 0%;
 }
 ::ng-deep .mat-form-field-underline {
@@ -33,5 +33,7 @@ td{
 }
 .mat-select-placeholder{
     border: 1px solid #7E7474 !important;
-    padding: 0%;
+}
+::ng-deep .mat-select{
+    padding: 2%;   
 }
