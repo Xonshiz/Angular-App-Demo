@@ -137,19 +137,19 @@
             </tr>
             <tr>
               <td>
-                  <input matInput [matDatepicker]="hiringDate" placeholder="Hiring Date">
+                  <input matInput style="border: 1px solid #7E7474 !important;height: 30px;width: 200px;padding: 2%;" [matDatepicker]="hiringDate" placeholder="Hiring Date">
                   <mat-datepicker-toggle matSuffix [for]="hiringDate"></mat-datepicker-toggle>
                   <mat-datepicker #hiringDate startView="year" [startAt]="startDate"></mat-datepicker>
               </td>
               <td style="text-align:right">
-                  <input matInput [matDatepicker]="effectiveDate" placeholder="Effective Date">
+                  <input matInput style="border: 1px solid #7E7474 !important;height: 30px;width: 200px;padding: 2%;" [matDatepicker]="effectiveDate" placeholder="Effective Date">
                   <mat-datepicker-toggle matSuffix [for]="effectiveDate"></mat-datepicker-toggle>
                   <mat-datepicker #effectiveDate startView="year" [startAt]="startDate"></mat-datepicker>
               </td>
             </tr>
             <tr>
                 <td>
-                    <input matInput [matDatepicker]="terminationDate" placeholder="Termination Date">
+                    <input matInput style="border: 1px solid #7E7474 !important;height: 30px;width: 200px;padding: 2%;" [matDatepicker]="terminationDate" placeholder="Termination Date">
                     <mat-datepicker-toggle matSuffix [for]="terminationDate"></mat-datepicker-toggle>
                     <mat-datepicker #terminationDate startView="year" [startAt]="startDate"></mat-datepicker>
                 </td>
@@ -382,7 +382,7 @@
                       </i>
                     </label>
                     <br>
-                  <input matInput [matDatepicker]="hiringDate_review" placeholder="Hiring Date">
+                  <input matInput style="border: 1px solid #7E7474 !important;height: 30px;width: 200px;padding: 2%;" [matDatepicker]="hiringDate_review" placeholder="Hiring Date">
                   <mat-datepicker-toggle matSuffix [for]="hiringDate_review"></mat-datepicker-toggle>
                   <mat-datepicker #hiringDate_review startView="year" [startAt]="startDate"></mat-datepicker>
               </td>
@@ -393,11 +393,9 @@
                       </i>
                     </label>
                     <br>
-                  <div class="dateSelector">
-                    <input matInput [matDatepicker]="effectiveDate_review" placeholder="Effective Date">
+                    <input matInput style="border: 1px solid #7E7474 !important;height: 30px;width: 200px;padding: 2%;" [matDatepicker]="effectiveDate_review" placeholder="Effective Date">
                     <mat-datepicker-toggle matSuffix [for]="effectiveDate_review"></mat-datepicker-toggle>
                     <mat-datepicker #effectiveDate_review startView="year" [startAt]="startDate"></mat-datepicker>
-                  </div>
               </td>
             </tr>
             <tr>
@@ -408,7 +406,7 @@
                         </i>
                       </label>
                       <br>
-                    <input matInput [matDatepicker]="terminationDate_review" placeholder="Termination Date">
+                    <input matInput style="border: 1px solid #7E7474 !important;height: 30px;width: 200px;padding: 2%;" [matDatepicker]="terminationDate_review" placeholder="Termination Date">
                     <mat-datepicker-toggle matSuffix [for]="terminationDate_review"></mat-datepicker-toggle>
                     <mat-datepicker #terminationDate_review startView="year" [startAt]="startDate"></mat-datepicker>
                 </td>
